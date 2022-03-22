@@ -1,24 +1,90 @@
-//create an Event handler
+
+//News API call
+document.getElementById("weather").addEventListener('click', gettravelMate)
+
+let title1 = document.getElementsByClassName("card-title")
+let body1 = document.getElementsByClassName("card-text")
+let url1 = document.getElementsByClassName("btn btn-primary link")
+
+function gettravelMate(e) {
+    e.preventDefault()
+    let city = document.getElementById('city').value
+   fetch(`https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI?q=${city}&pageNumber=1&pageSize=3&autoCorrect=true&rapidapi-key=74ee0f94aamsh11d14a149dcb349p139f86jsn507357677172`)
+    .then((response) =>{
+    return response.json()
+})
+.then(data => {
+    for (let index = 0; index < data.value.length; index++) {
+        title1[index].innerHTML= data.value[index].title
+        body1[index].innerHTML= data.value[index].description
+        url1[index].setAttribute("href", data.value[index].url)}
+})
+}
+
+//-----------------------------------------------------------------
+//web search APT call
+document.getElementById("weather").addEventListener('click', getNewsSearch)
+
+let title2 = document.getElementsByClassName("card-title1")
+let body2 = document.getElementsByClassName("card-text1")
+let url2 = document.getElementsByClassName("btn btn-primary link1")
+
+function getNewsSearch(e) {
+    e.preventDefault()
+   let city = document.getElementById('city').value
+    fetch(`https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/WebSearchAPI?pageNumber=1&autoCorrect=true&q=${city}&rapidapi-key=74ee0f94aamsh11d14a149dcb349p139f86jsn507357677172&pageSize=2`)
+.then((response) => {
+    return response.json()
+})
+.then(data =>{
+    for (let index = 0; index < data.value.length; index++) {
+        title2[index].innerHTML= data.value[index].title
+        body2[index].innerHTML= data.value[index].description
+        url2[index].setAttribute("href", data.value[index].url)}
+})
+}
+
+//--------------------------------------------------------
+
+//create an Event handler for getting infor from Weather API
 document.getElementById('weather').addEventListener('click', getCity)
-//Get Weather function
-function getCity() {
-    // let city = document.getElementById('city').value
+function getCity(e) {
+    e.preventDefault()
+    let city = document.getElementById('city').value
     // let units = document.querySelector('select').value
-    fetch (`https://weatherapi-com.p.rapidapi.com/current.json?q=houston&days=3&rapidapi-key=7d859b5d30mshfcc01545a8ec42ep1dfdebjsn453b001a9e5a`)
+    fetch (`https://weatherapi-com.p.rapidapi.com/current.json?q=${city}&days=3&rapidapi-key=7d859b5d30mshfcc01545a8ec42ep1dfdebjsn453b001a9e5a`)
     .then((response) => {
         return response.json()
-        //console.log(response)
     })
- //We return this value so that the next .the() is able to access the value
-    .then(something => { console.log({
+    .then(something => { let cityInfo = {
         city: something.location.name,
         region: something.location.region,
         country: something.location.country,
+        lat:  something.location.lat,
+        lon: something.location.lon,
         temperatureF: something.current.temp_f,
         temperatureC: something.current.temp_c,
         condition: something.current.condition.text,
         image: something.current.condition.icon,
         uv: something.current.uv,
-        })
+        }
+        document.getElementById("outputCity").innerHTML = cityInfo.city
+        document.getElementById("outputTemp").innerHTML = cityInfo.temperatureF
+        document.getElementById("outputCon").innerHTML = cityInfo.condition
+        document.getElementById("outputImg").src = cityInfo.image
+        document.getElementById("outputUV").innerHTML = cityInfo.uv
+        marker.setLatLng([cityInfo.lat, cityInfo.lon])
+        map.panTo(new L.LatLng(cityInfo.lat, cityInfo.lon));
     })
 }
+
+//---------------------------------------------------------------
+
+//leaflet map js
+const map = L.map('map').setView([33.74,-84.38], 6);
+const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+const accessToken = 'pk.eyJ1Ijoic2FtbW9vbjkwIiwiYSI6ImNsMHkxbGZlYjExYTAzZXA1eHI1a3J6aGkifQ.KWKiZeMBZfOlRADNKOku1w'
+const tileUrl= 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+const tiles = L.tileLayer(tileUrl, {attribution});
+tiles.addTo(map)
+const marker = L.marker([33.74,-84.38],).addTo(map);
