@@ -21,7 +21,7 @@
             </li>
           </ul>
           <form class="d-flex">
-            <input id="city" class="form-control me-2" type="search" placeholder="City, state, or zip code " aria-label="Search">
+            <input id="city" class="form-control me-2" type="search" placeholder="Please enter a city" aria-label="Search">
             <button id="weather" class="btn btn-outline-success" type="submit">Explore</button>
           </form>
         </div>
@@ -34,7 +34,7 @@
                 <img src="" class="card-img-top" style="height: 250px; width: 250px;">
                 <div  class="card-body">
                     <h5 id= "title1" class="card-title">Article 1</h5>
-                    <p id = "body1" class="card-text"></p>
+                      <p id = "body1" class="card-text"></p>
                     <a id = "url1" href="#" class="btn btn-primary link">Go to the article</a>
                 </div>
             </div>
@@ -42,8 +42,7 @@
                 <img src="" class="card-img-top" style="height: 250px; width: 250px;">
                 <div  class="card-body">
                     <h5 id = "title1" class="card-title">Article 2</h5>
-                    <p id = "body1"
-                  class="card-text"></p>
+                      <p id = "body1" class="card-text"></p>
                     <a id = "url1" href="#" class="btn btn-primary link">Go to the article</a>
                 </div>
             </div>
@@ -51,7 +50,9 @@
                 <img src=""  class="card-img-top" style="height: 250px; width: 250px;">
                 <div id="red" class="card-body">
                     <h5 id = "title1" class="card-title">Article 3</h5>
-                    <p id = "body1" class="card-text"></p>
+
+                      <p id = "body1" class="card-text"></p>
+
                     <a id = "url1" href="#" class="btn btn-primary link">Go to the article</a>
                 </div>
             </div>
@@ -82,20 +83,19 @@
     </div>
     <div class="text-center" id="newsHeader" style="padding: 30px;">Here is what is happening in your neck of the woods.</div>
     <div class="d-flex justify-content-center">
-    <div id="weatherTable" style="width: 70%;">
-      <table class="table">
+    <div id="weatherTable" style="width: 70%;" class="text-center">
+      <table class="table align-middle">
         <thead>
-          <tr>
+          <tr class="align-middle">
             <th scope="col" ></th>
             <th scope="col">City</th>
             <th scope="col">Temperature</th>
-            <th scope="col">Current Conditions</th>
-            <th scope="col"></th>
+            <th colspan="2">Current Conditions</th>
             <th scope="col">UV Index </th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr class="align-middle">
             <th scope="row">Today</th>
             <td scope="col" id="outputCity"></td>
             <td scope="col" id="outputTemp"></td>

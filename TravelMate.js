@@ -21,7 +21,7 @@ async function gettravelMate(e) {
         .then(data => {
             for (let index = 0; index < data.value.length; index++) {
                 title1[index].innerHTML= data.value[index].title
-                body1[index].innerHTML= data.value[index].description
+                body1[index].innerHTML= data.value[index].snippet
                 url1[index].setAttribute("href", data.value[index].url)
                 newsImg[index].setAttribute("src", data.value[index].image.url)
             }
