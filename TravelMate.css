@@ -62,3 +62,9 @@
       transform: rotateY(3600deg);
     }
   }
+
+  .col-sm-6 {
+    display: flex;
+    flex-flow: row wrap;
+    max-height: min-content;
+  }
