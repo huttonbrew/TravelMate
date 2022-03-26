@@ -13,6 +13,7 @@ let city = document.getElementById('city').value
 
 async function gettravelMate(e) {
     e.preventDefault()
+    document.getElementById('loader').innerHTML = `<div class="d-flex justify-content-center"><div class="lds-circle"><div></div></div></div>`
     let city = document.getElementById('city').value
     await fetch(`https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI?q=${city}&pageNumber=1&pageSize=3&autoCorrect=true&rapidapi-key=74ee0f94aamsh11d14a149dcb349p139f86jsn507357677172`)
         .then((response) =>{
@@ -55,6 +56,7 @@ async function gettravelMate(e) {
         image: something.current.condition.icon,
         uv: something.current.uv,
         }
+        document.getElementById('loader').innerHTML = '';
         document.getElementById("outputCity").innerHTML = cityInfo.city
         document.getElementById("outputTemp").innerHTML = cityInfo.temperatureF
         document.getElementById("outputCon").innerHTML = cityInfo.condition
@@ -63,18 +65,6 @@ async function gettravelMate(e) {
         marker.setLatLng([cityInfo.lat, cityInfo.lon])
         map.panTo(new L.LatLng(cityInfo.lat, cityInfo.lon));
     })
-}
-
-
-//--------------------------------------------------------
-
-//create an Event handler for getting infor from Weather API
-document.getElementById('weather').addEventListener('click', getCity)
-function getCity(e) {
-    e.preventDefault()
-    let city = document.getElementById('city').value
-    // let units = document.querySelector('select').value
-
 }
 
 //---------------------------------------------------------------
