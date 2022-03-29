@@ -1,5 +1,5 @@
 
-//News API call
+//Event Handler for getting Api
 document.getElementById("weather").addEventListener('click', gettravelMate)
 
 let title1 = document.getElementsByClassName("card-title")
@@ -14,6 +14,7 @@ let city = document.getElementById('city').value
 async function gettravelMate(e) {
     e.preventDefault()
     let city = document.getElementById('city').value
+    //NewSearch Api call
     await fetch(`https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI?q=${city}&pageNumber=1&pageSize=3&autoCorrect=true&rapidapi-key=74ee0f94aamsh11d14a149dcb349p139f86jsn507357677172`)
         .then((response) =>{
             return response.json()
@@ -26,7 +27,7 @@ async function gettravelMate(e) {
                 newsImg[index].setAttribute("src", data.value[index].image.url)
             }
         })
-
+//Websearch Api call
     await fetch(`https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/WebSearchAPI?pageNumber=1&autoCorrect=true&q=${city}&rapidapi-key=74ee0f94aamsh11d14a149dcb349p139f86jsn507357677172&pageSize=2`)
         .then((response) => {
             return response.json()
@@ -39,6 +40,7 @@ async function gettravelMate(e) {
                 url2[index].setAttribute("href", data.value[index].url)
             }
         })
+        //Weather Api call
     await fetch (`https://weatherapi-com.p.rapidapi.com/current.json?q=${city}&days=3&rapidapi-key=7d859b5d30mshfcc01545a8ec42ep1dfdebjsn453b001a9e5a`)
     .then((response) => {
         return response.json()
@@ -68,14 +70,7 @@ async function gettravelMate(e) {
 
 //--------------------------------------------------------
 
-//create an Event handler for getting infor from Weather API
-document.getElementById('weather').addEventListener('click', getCity)
-function getCity(e) {
-    e.preventDefault()
-    let city = document.getElementById('city').value
-    // let units = document.querySelector('select').value
 
-}
 
 //---------------------------------------------------------------
 
