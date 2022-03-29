@@ -17,8 +17,12 @@ Screenshots of your project.
 List of team members.
 -Sam Moon
 ![image info](sam.jpg)
+
+
 -Victor Hutton Brew
 ![image info](Victor.png)
+
+
 -Rocky Rosaless
 ![image info](Rocky.png)
 
