@@ -1,44 +1,43 @@
 /* This is for the contents of the cards*/
 .col-sm-6 {
-  display: flex;
-  flex-flow: row wrap;
-  max-height: min-content;
-  }
+    display: flex;
+    flex-flow: row wrap;
+    max-height: min-content;
+    }
 ​
 #nav, #home, #weather  {
-  font-family: palatino;
-  font-size: x-large;
-  }
+    font-family: palatino;
+    font-size: x-large;
+    }
 ​
 ​
 /* This is for the weather table*/
 #weatherTable {
-  background-color: none;
-  }
+    background-color: none;
+    }
 ​
 ​
 /* This is for the map*/
 #map { 
-  height: 500px; width: 60%
-  }
+    height: 500px; width: 60%
+    }
 ​
 ​
 /* This is for the loader*/
 .lds-circle {
-  display: inline-block;
-  transform: translateZ(1px);
-  }
+    display: inline-block;
+    transform: translateZ(1px);
+    }
 .lds-circle > div {
-  display: inline-block;
-  width: 120px;
-  height: 120px;
-  margin: 8px;
-  border-radius: 50%;
-  background: white;
-  animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
-  }
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    margin: 8px;
+    border-radius: 50%;
+    background: white;
+    animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    }
 @keyframes lds-circle {
-<<<<<<< HEAD
     0%, 100% {
       animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
         }
@@ -53,37 +52,18 @@
       transform: rotateY(3600deg);
         }
     }
-
-
-=======
-  0%, 100% {
-    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
-      }
-  0% {
-    transform: rotateY(0deg);
-      }
-  50% {
-    transform: rotateY(1800deg);
-    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
-      }
-  100% {
-    transform: rotateY(3600deg);
-      }
-  }
 ​
 ​
->>>>>>> main
 /* This is for the backgrounds - webpage & headers*/
-body {
-  background-image: url('https://jillchristensenintl.com/wp-content/uploads/2018/09/vacation_time-1494435.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center top;
-  background-size: cover;
-  }
+  body {
+    background-image: url('https://jillchristensenintl.com/wp-content/uploads/2018/09/vacation_time-1494435.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center top;
+    background-size: cover;
+    }
 ​
 #newsHeader {
-<<<<<<< HEAD
     width: 45%;
     color: aliceblue;
     background-image: url('https://cutewallpaper.org/21/dark-night-sky-background/Funnytree-7x5ft-Ployester-Backdrop-Photography-Backdrops-Dark-Night-Sky-Clouds-Baby-Shower-Newborn-Photo-Studio-Background-Props.jpg');
@@ -101,22 +81,3 @@ body {
     text-shadow: 2px 2px 4px #000000;
     }
     
-    
-=======
-  width: 45%;
-  color: aliceblue;
-  background-image: url('https://cutewallpaper.org/21/dark-night-sky-background/Funnytree-7x5ft-Ployester-Backdrop-Photography-Backdrops-Dark-Night-Sky-Clouds-Baby-Shower-Newborn-Photo-Studio-Background-Props.jpg');
-  background-repeat: repeat ;
-  background-attachment: fixed;
-  background-position: top;
-  font-family: palatino;
-  font-size: x-large;
-  border: 2px solid gray;
-  border-radius: 5px;
-  text-align: justify;
-  vertical-align: middle;
-  padding: 15px;
-  margin: 40px;
-  text-shadow: 2px 2px 4px #000000;
-  }
->>>>>>> main
