@@ -1,55 +1,83 @@
-#map { height: 500px; width: 60%}
-​
-.card-img-top {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-​
-#url1 {
-    position: absolute;
-    bottom: 10px;
-    left: 30%;
-    right: 30%;
-} 
-​
-.card text-center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-} 
-​
-#weatherTable {
-    background-color: white;
-}
-​
-#body1 {
-    padding-bottom: 5%;
-}
-​
-#nav,#home, #weather, #newsHeader {
+/* This is for the contents of the cards*/
+.col-sm-6 {
+    display: flex;
+    flex-flow: row wrap;
+    max-height: min-content;
+    }
+
+#nav, #home, #weather  {
     font-family: palatino;
     font-size: x-large;
-}
-​
-#loading {
-    position: fixed;
-    display: block;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    text-align: center;
-    opacity: 0.7;
-    background-color: #fff;
-    z-index: 99;
-  }
-  
-  #loading-image {
-    position: absolute;
-    top: 100px;
-    left: 240px;
-    z-index: 100;
-  }
+    }
+
+
+/* This is for the weather table*/
+#weatherTable {
+    background-color: none;
+    }
+
+
+/* This is for the map*/
+#map { 
+    height: 500px; width: 60%
+    }
+
+
+/* This is for the loader*/
+.lds-circle {
+    display: inline-block;
+    transform: translateZ(1px);
+    }
+.lds-circle > div {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    margin: 8px;
+    border-radius: 50%;
+    background: white;
+    animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    }
+@keyframes lds-circle {
+    0%, 100% {
+      animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+        }
+    0% {
+      transform: rotateY(0deg);
+        }
+    50% {
+      transform: rotateY(1800deg);
+      animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+        }
+    100% {
+      transform: rotateY(3600deg);
+        }
+    }
+
+    
+/* This is for the backgrounds - webpage & headers*/
+  body {
+    background-image: url('https://jillchristensenintl.com/wp-content/uploads/2018/09/vacation_time-1494435.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center top;
+    background-size: cover;
+    }
+
+#newsHeader {
+    width: 45%;
+    color: aliceblue;
+    background-image: url('https://cutewallpaper.org/21/dark-night-sky-background/Funnytree-7x5ft-Ployester-Backdrop-Photography-Backdrops-Dark-Night-Sky-Clouds-Baby-Shower-Newborn-Photo-Studio-Background-Props.jpg');
+    background-repeat: repeat ;
+    background-attachment: fixed;
+    background-position: top;
+    font-family: palatino;
+    font-size: x-large;
+    border: 2px solid gray;
+    border-radius: 5px;
+    text-align: justify;
+    vertical-align: middle;
+    padding: 15px;
+    margin: 40px;
+    text-shadow: 2px 2px 4px #000000;
+    }
+    
