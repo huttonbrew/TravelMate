@@ -1,5 +1,5 @@
 
-//News API call
+//API call
 document.getElementById("weather").addEventListener('click', gettravelMate)
 
 let title1 = document.getElementsByClassName("card-title")
