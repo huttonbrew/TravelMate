@@ -29,10 +29,28 @@
     padding-bottom: 5%;
 }
 ​
-#nav,#home, #weather, #newsHeader {
+#nav,#home, #weather  {
     font-family: palatino;
     font-size: x-large;
 }
+
+#newsHeader {
+    width: 45%;
+    color: aliceblue;
+    background-image: url('https://cutewallpaper.org/21/dark-night-sky-background/Funnytree-7x5ft-Ployester-Backdrop-Photography-Backdrops-Dark-Night-Sky-Clouds-Baby-Shower-Newborn-Photo-Studio-Background-Props.jpg');
+    background-repeat: no-repeat ;
+    background-attachment: fixed;
+    background-position: top;
+    font-family: palatino;
+    font-size: x-large;
+    border: 2px solid gray;
+    border-radius: 5px;
+    text-align: justify;
+    vertical-align: middle;
+    padding: 15px;
+    margin: 40px;
+    text-shadow: 2px 2px 4px #000000;
+  }
 ​
 .lds-circle {
     display: inline-block;
@@ -40,8 +58,8 @@
   }
   .lds-circle > div {
     display: inline-block;
-    width: 64px;
-    height: 64px;
+    width: 120px;
+    height: 120px;
     margin: 8px;
     border-radius: 50%;
     background: blue;
@@ -68,3 +86,13 @@
     flex-flow: row wrap;
     max-height: min-content;
   }
+
+
+
+  body {
+  background-image: url('https://jillchristensenintl.com/wp-content/uploads/2018/09/vacation_time-1494435.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
+  background-size: cover;
+}
